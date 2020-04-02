@@ -1,0 +1,152 @@
+.container {
+  max-width: $websiteWidth;
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+// Toast
+#toast-container {
+  display: block;
+  position: fixed;
+  z-index: 10000;
+  top: 10%;
+  right: 7%;
+  max-width: 86%;
+}
+
+.toast {
+  border-radius: 2px;
+  top: 35px;
+  width: auto;
+  margin-top: 10px;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  min-height: 48px;
+  line-height: 1.5em;
+  background-color: #323232;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: default;
+}
+
+// Buttons
+%btn-shared {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  &-main {
+    @extend %btn-shared;
+    color: $darkColor;
+    background: $mainColor;
+  }
+  &-light {
+    @extend %btn-shared;
+    color: $darkColor;
+    background: $lightColor;
+  }
+  &-dark {
+    @extend %btn-shared;
+    color: $lightColor;
+    background: $darkColor;
+  }
+}
+
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover {
+  background-color: $mainColor;
+}
+
+// Backgrounds
+.bg {
+  &-main {
+    background: $mainColor;
+    color: set-text-color($mainColor);
+  }
+  &-dark {
+    background: $darkColor;
+    color: set-text-color($darkColor);
+  }
+  &-light {
+    background: $lightColor;
+    color: set-text-color($lightColor);
+  }
+  &-medium {
+    background: $mediumColor;
+    color: set-text-color($mediumColor);
+  }
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Padding
+.py {
+  &-1 {
+    padding: 1rem 0;
+  }
+  &-2 {
+    padding: 2rem 0;
+  }
+  &-3 {
+    padding: 3rem 0;
+  }
+  &-4 {
+    padding: 4rem 0;
+  }
+}
+
+// Margin
+.my {
+  &-1 {
+    margin: 1rem 0;
+  }
+  &-2 {
+    margin: 2rem 0;
+  }
+  &-3 {
+    margin: 3rem 0;
+  }
+  &-4 {
+    margin: 4rem 0;
+  }
+}
+
+.section-title {
+  font-size: 2rem;
+  display: block;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.bottom-line {
+  height: 2px;
+  width: 3rem;
+  background: $mainColor;
+  display: block;
+  margin: 0 auto 1rem auto;
+}

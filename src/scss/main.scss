@@ -1,0 +1,383 @@
+@import 'config';
+@import 'utilities';
+@import 'item_grid.scss';
+
+//General Styles
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.6;
+  background: $lightColor;
+}
+
+a {
+  text-decoration: none;
+  color: $darkColor;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+
+// Logo
+#logo {
+  width: 70px;
+  height: 70px;
+  color: $lightColor;
+  text-transform: uppercase;
+}
+
+// Main Nav
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  ul {
+    display: flex;
+  }
+  li {
+    padding: 1rem 1.5rem;
+  }
+  a {
+    text-decoration: none;
+    color: $lightColor;
+    text-transform: uppercase;
+    border-bottom: 3px transparent solid;
+    padding-bottom: 0.5rem;
+    transition: border-color 0.5s;
+
+    &:hover {
+      border-color: $mediumColor;
+    }
+
+    &.current {
+      border-color: $mainColor;
+    }
+  }
+}
+
+// Header
+#header {
+  &-home {
+    background: $bgImg no-repeat center right / cover;
+    height: 100vh;
+    color: $lightColor;
+
+    // Header Content
+    .header-content {
+      text-align: center;
+      padding-top: 20%;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+      span {
+        color: $mainColor;
+      }
+    }
+  }
+
+  // Header Inner
+  &-inner {
+    background: $bgImg no-repeat 20% 30% / cover;
+    height: 5.5rem;
+    border-bottom: 3px solid $mainColor;
+  }
+}
+
+// Home Sections
+#home {
+  //Home Section A
+  &-a {
+    .specials {
+      margin-top: 3rem;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      .fas {
+        color: $mainColor;
+        padding-bottom: 0.4rem;
+      }
+    }
+  }
+
+  //Home Section B
+  &-b {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      li {
+        line-height: 2;
+
+        &.stats-title {
+          font-size: 1.5rem;
+        }
+
+        &.stats-number {
+          font-size: 2rem;
+        }
+      }
+
+      div {
+        padding: 3rem 0;
+
+        &:nth-child(odd) {
+          background-color: $lightColor;
+        }
+
+        &:nth-child(even) {
+          background-color: $mediumColor;
+        }
+      }
+    }
+  }
+
+  //Home Section C
+  &-c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+
+      &-step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 28px;
+        background-color: $mainColor;
+        border-radius: 50%;
+        height: 15px;
+        line-height: 15px;
+        padding: 1rem;
+        transition: all 1s;
+      }
+
+      &-icon {
+        border-radius: 50%;
+        background: $darkColor;
+        color: $lightColor;
+        padding: 2rem;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        position: relative;
+        transition: all 1s;
+
+        &:hover {
+          background: $mainColor;
+          width: 90px;
+          height: 90px;
+          line-height: 90px;
+
+          .process-step {
+            background-color: $darkColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+// About Sections
+#about {
+  // About A
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas:
+        'bioimg bio bio'
+        'aw1 aw2 aw3';
+      grid-gap: 1.2rem;
+    }
+
+    // Grid Area
+    .bio-img {
+      grid-area: bioimg;
+    }
+
+    .bio {
+      grid-area: bio;
+      border-left: 3px solid $mainColor;
+      padding: 0.8rem;
+    }
+
+    .award-1 {
+      grid-area: aw1;
+    }
+    .award-2 {
+      grid-area: aw2;
+    }
+    .award-3 {
+      grid-area: aw3;
+    }
+
+    .fas {
+      color: $mainColor;
+      margin: 1rem;
+    }
+  }
+
+  // About B
+  &-b {
+    .progress {
+      overflow: hidden;
+      height: 20px;
+      background: $mediumColor;
+      border-radius: 5px;
+      margin-bottom: 0.6rem;
+
+      div {
+        height: 100%;
+        color: $lightColor;
+        text-align: center;
+        background: $mainColor;
+      }
+    }
+  }
+
+  &-c {
+    .about-logos {
+      display: grid;
+      grid-gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+
+  &-d {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+
+      ul {
+        list-style: none;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        border: 1px solid $mediumColor;
+        border-radius: 5px;
+        padding: 0.5rem;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Contact Page
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-template-areas:
+        'name email'
+        'subject phone'
+        'message message';
+      grid-gap: 1.2rem;
+      margin-bottom: 1.2rem;
+
+      // Grid Areas
+      .name-input {
+        grid-area: name;
+      }
+
+      .email-input {
+        grid-area: email;
+      }
+
+      .subject-input {
+        grid-area: subject;
+      }
+
+      .phone-input {
+        grid-area: phone;
+      }
+
+      .message-input {
+        grid-area: message;
+        height: 100px;
+      }
+
+      .text-input {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    button[type='submit'] {
+      width: 50%;
+    }
+  }
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-c {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+// Footer
+#main-footer {
+  background: $darkColor;
+  color: $lightColor;
+  height: 5rem;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    align-items: center;
+  }
+
+  .social .fab {
+    margin-right: 1rem;
+    border: 2px $lightColor solid;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding: 0.5rem;
+    text-align: center;
+
+    &:hover {
+      color: $mainColor;
+      border: 2px $mainColor solid;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// Varibales
+$websiteWidth: 1280px;
+$lightColor: #fff;
+$mainColor: #ffbc00;
+$darkColor: #333;
+$mediumColor: #ccc;
+$bgImg: url('../assets/imgs/showcase.jpg');
+
+//Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
